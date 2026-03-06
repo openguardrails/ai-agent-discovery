@@ -1,0 +1,39 @@
+# Devin Detection Signatures
+id: devin
+name: Devin Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Devin AI software engineer
+
+patterns:
+  process:
+    - pattern: "devin"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "cognition-ai"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: ".devin"
+      type: substring
+
+    - pattern: "devin-agent"
+      type: substring
+
+  network:
+    - pattern: "devin.ai"
+      type: domain
+
+    - pattern: "cognition.ai"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

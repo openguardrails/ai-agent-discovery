@@ -1,0 +1,32 @@
+# GitHub Copilot Chat Detection Signatures
+id: copilot-chat
+name: GitHub Copilot Chat Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for GitHub Copilot Chat
+
+patterns:
+  process:
+    - pattern: "copilot-chat"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+    - pattern: "copilot.chat"
+      type: substring
+      case_sensitive: false
+      fields: [file_path]
+
+  file_path:
+    - pattern: "copilot-chat"
+      type: substring
+
+    - pattern: "GitHub.copilot-chat"
+      type: substring
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Discovery Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>AI Agent Discovery</h1>
+      <div class="header-actions">
+        <button id="refresh-btn" class="btn btn-primary">Refresh</button>
+        <button id="scan-btn" class="btn btn-secondary">Run Scan</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Stats Cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">&#x1F916;</div>
+          <div class="stat-content">
+            <div class="stat-value" id="stat-agents">-</div>
+            <div class="stat-label">Agents</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">&#x1F4BB;</div>
+          <div class="stat-content">
+            <div class="stat-value" id="stat-endpoints">-</div>
+            <div class="stat-label">Endpoints</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">&#x1F465;</div>
+          <div class="stat-content">
+            <div class="stat-value" id="stat-users">-</div>
+            <div class="stat-label">Users</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">&#x1F3F7;</div>
+          <div class="stat-content">
+            <div class="stat-value" id="stat-species">-</div>
+            <div class="stat-label">Species</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Distribution Chart -->
+      <section class="card">
+        <h2>Agent Distribution by Kingdom</h2>
+        <div id="distribution-chart" class="distribution-chart"></div>
+      </section>
+
+      <!-- Recent Detections -->
+      <section class="card">
+        <h2>Detected Agents</h2>
+        <div class="table-controls">
+          <input type="text" id="search-input" placeholder="Search agents..." class="search-input">
+          <select id="filter-kingdom" class="filter-select">
+            <option value="">All Kingdoms</option>
+            <option value="autonomous">Autonomous</option>
+            <option value="assistant">Assistant</option>
+            <option value="workflow">Workflow</option>
+          </select>
+          <button id="export-btn" class="btn btn-small">Export CSV</button>
+        </div>
+        <div class="table-container">
+          <table id="agents-table" class="data-table">
+            <thead>
+              <tr>
+                <th>Hostname</th>
+                <th>User</th>
+                <th>Agent</th>
+                <th>Kingdom</th>
+                <th>Confidence</th>
+                <th>Last Seen</th>
+              </tr>
+            </thead>
+            <tbody id="agents-tbody">
+              <tr>
+                <td colspan="6" class="loading">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Taxonomy Browser -->
+      <section class="card">
+        <h2>Taxonomy Browser</h2>
+        <input type="text" id="taxonomy-search" placeholder="Search agents..." class="search-input">
+        <div id="taxonomy-tree" class="taxonomy-tree"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>AI Agent Discovery v1.0.0 | <span id="last-scan">Last scan: Never</span></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

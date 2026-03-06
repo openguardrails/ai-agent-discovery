@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-03-05T10:30:00Z",
+    "endpoint": "WORKSTATION-001",
+    "username": "jsmith",
+    "os_type": "Windows",
+    "file_path": "C:\\Users\\jsmith\\AppData\\Local\\Programs\\Claude\\Claude.exe",
+    "image_name": "Claude.exe",
+    "command_line": "\"C:\\Users\\jsmith\\AppData\\Local\\Programs\\Claude\\Claude.exe\" --startup",
+    "parent_process": "explorer.exe"
+  },
+  {
+    "timestamp": "2026-03-05T11:15:00Z",
+    "endpoint": "MAC-DEV-002",
+    "username": "alee",
+    "os_type": "macOS",
+    "file_path": "/Applications/Claude.app/Contents/MacOS/Claude",
+    "image_name": "Claude",
+    "command_line": "/Applications/Claude.app/Contents/MacOS/Claude",
+    "parent_process": "launchd"
+  },
+  {
+    "timestamp": "2026-03-05T09:45:00Z",
+    "endpoint": "WORKSTATION-003",
+    "username": "mjohnson",
+    "os_type": "Windows",
+    "file_path": "C:\\Users\\mjohnson\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+    "image_name": "Cursor.exe",
+    "command_line": "\"C:\\Users\\mjohnson\\AppData\\Local\\Programs\\cursor\\Cursor.exe\"",
+    "parent_process": "explorer.exe"
+  },
+  {
+    "timestamp": "2026-03-05T14:20:00Z",
+    "endpoint": "LINUX-SRV-004",
+    "username": "deploy",
+    "os_type": "Linux",
+    "file_path": "/opt/n8n/node_modules/.bin/n8n",
+    "image_name": "n8n",
+    "command_line": "node /opt/n8n/packages/cli/bin/n8n start",
+    "parent_process": "systemd"
+  },
+  {
+    "timestamp": "2026-03-05T08:00:00Z",
+    "endpoint": "MAC-DEV-005",
+    "username": "kchen",
+    "os_type": "macOS",
+    "file_path": "/Applications/Cursor.app/Contents/MacOS/Cursor",
+    "image_name": "Cursor",
+    "command_line": "/Applications/Cursor.app/Contents/MacOS/Cursor /Users/kchen/projects/myapp",
+    "parent_process": "launchd"
+  },
+  {
+    "timestamp": "2026-03-05T16:45:00Z",
+    "endpoint": "WORKSTATION-006",
+    "username": "rwilliams",
+    "os_type": "Windows",
+    "file_path": "C:\\Users\\rwilliams\\AppData\\Local\\Programs\\OpenClaw\\openclaw.exe",
+    "image_name": "openclaw.exe",
+    "command_line": "openclaw.exe --agent start",
+    "parent_process": "cmd.exe"
+  },
+  {
+    "timestamp": "2026-03-05T12:30:00Z",
+    "endpoint": "LINUX-DEV-007",
+    "username": "tbrown",
+    "os_type": "Linux",
+    "file_path": "/home/tbrown/.local/bin/claude-code",
+    "image_name": "claude-code",
+    "command_line": "npx claude-code",
+    "parent_process": "bash"
+  },
+  {
+    "timestamp": "2026-03-05T15:00:00Z",
+    "endpoint": "WORKSTATION-001",
+    "username": "jsmith",
+    "os_type": "Windows",
+    "file_path": "C:\\Users\\jsmith\\.vscode\\extensions\\github.copilot-1.0.0\\dist\\extension.js",
+    "image_name": "Code.exe",
+    "command_line": "\"C:\\Program Files\\Microsoft VS Code\\Code.exe\"",
+    "parent_process": "explorer.exe"
+  },
+  {
+    "timestamp": "2026-03-04T22:00:00Z",
+    "endpoint": "LINUX-SRV-008",
+    "username": "automation",
+    "os_type": "Linux",
+    "file_path": "/opt/dify/api/app.py",
+    "image_name": "python3",
+    "command_line": "python3 /opt/dify/api/app.py",
+    "parent_process": "docker"
+  },
+  {
+    "timestamp": "2026-03-05T13:15:00Z",
+    "endpoint": "MAC-DEV-002",
+    "username": "alee",
+    "os_type": "macOS",
+    "file_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+    "image_name": "ChatGPT",
+    "command_line": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+    "parent_process": "launchd"
+  },
+  {
+    "timestamp": "2026-03-05T10:00:00Z",
+    "endpoint": "WORKSTATION-009",
+    "username": "emartinez",
+    "os_type": "Windows",
+    "file_path": "C:\\Users\\emartinez\\autogpt\\autogpt.py",
+    "image_name": "python.exe",
+    "command_line": "python.exe C:\\Users\\emartinez\\autogpt\\autogpt.py",
+    "parent_process": "cmd.exe"
+  },
+  {
+    "timestamp": "2026-03-05T17:30:00Z",
+    "endpoint": "LINUX-SRV-010",
+    "username": "devops",
+    "os_type": "Linux",
+    "file_path": "/opt/flowise/dist/index.js",
+    "image_name": "node",
+    "command_line": "node /opt/flowise/dist/index.js",
+    "parent_process": "systemd"
+  }
+]

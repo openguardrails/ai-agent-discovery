@@ -1,0 +1,36 @@
+# Langflow Detection Signatures
+id: langflow
+name: Langflow Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for DataStax Langflow
+
+patterns:
+  process:
+    - pattern: "langflow"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "python.*langflow"
+      type: regex
+      case_sensitive: false
+      fields: [command_line]
+
+  file_path:
+    - pattern: "langflow"
+      type: substring
+
+    - pattern: ".langflow"
+      type: substring
+
+  network:
+    - pattern: "langflow.org"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

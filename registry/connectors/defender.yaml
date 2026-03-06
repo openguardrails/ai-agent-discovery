@@ -1,0 +1,37 @@
+# Microsoft Defender Connector Configuration
+id: defender
+name: Microsoft Defender for Endpoint
+type: edr
+version: "1.0.0"
+
+# API configuration
+api:
+  base_url: https://api.securitycenter.microsoft.com
+  auth_type: oauth2
+  auth_url: https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token
+  scope: https://api.securitycenter.microsoft.com/.default
+
+# Field mappings (EDR fields → normalized fields)
+field_mappings:
+  timestamp: "Timestamp"
+  endpoint: "DeviceName"
+  username: "AccountName"
+  os_type: "OSPlatform"
+  file_path: "FolderPath"
+  image_name: "FileName"
+  command_line: "ProcessCommandLine"
+  parent_process: "InitiatingProcessFileName"
+
+# Query template (KQL)
+query_template: |
+  DeviceProcessEvents
+  | where Timestamp > ago({{lookback_days}}d)
+  | where {{#patterns}}FolderPath contains '{{pattern}}' or FileName contains '{{pattern}}' or ProcessCommandLine contains '{{pattern}}'{{/patterns}}
+  | project Timestamp, DeviceName, AccountName, OSPlatform, FolderPath, FileName, ProcessCommandLine, InitiatingProcessFileName
+  | limit 10000
+
+# API limits
+limits:
+  max_events_per_query: 10000
+  window_days: 7
+  request_delay_ms: 1000

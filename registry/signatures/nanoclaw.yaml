@@ -1,0 +1,29 @@
+# NanoClaw Detection Signatures
+id: nanoclaw
+name: NanoClaw Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for NanoClaw AI agent
+
+patterns:
+  process:
+    - pattern: "nanoclaw"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "NanoClaw"
+      type: substring
+      fields: [file_path, image_name]
+
+  file_path:
+    - pattern: "\\.nanoclaw"
+      type: substring
+      description: Hidden .nanoclaw directory
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

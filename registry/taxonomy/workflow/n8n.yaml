@@ -1,0 +1,16 @@
+# N8N Workflow Family
+
+family:
+  id: n8n
+  name: N8N
+  description: N8N workflow automation platform
+  kingdom: workflow
+  website: https://n8n.io
+
+species:
+  - id: n8n
+    name: N8N
+    description: N8N workflow automation
+    website: https://n8n.io
+    signatures:
+      - ref: n8n

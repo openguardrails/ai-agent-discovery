@@ -1,0 +1,36 @@
+# SWE-agent Detection Signatures
+id: swe-agent
+name: SWE-agent Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Princeton SWE-agent
+
+patterns:
+  process:
+    - pattern: "swe-agent"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "sweagent"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "swe-agent"
+      type: substring
+
+    - pattern: "SWE-agent"
+      type: substring
+
+  network:
+    - pattern: "swe-agent.com"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

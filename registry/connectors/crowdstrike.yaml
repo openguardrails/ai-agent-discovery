@@ -1,0 +1,43 @@
+# CrowdStrike Connector Configuration
+id: crowdstrike
+name: CrowdStrike Falcon
+type: edr
+version: "1.0.0"
+
+# API configuration
+api:
+  base_url: https://api.crowdstrike.com
+  auth_type: oauth2
+  auth_url: /oauth2/token
+  repository: search-all
+
+# Field mappings (EDR fields → normalized fields)
+field_mappings:
+  timestamp: "@timestamp"
+  endpoint: "ComputerName"
+  username: "UserName"
+  os_type: "event_platform"
+  file_path: "FilePath"
+  image_name: "ImageFileName"
+  command_line: "CommandLine"
+  parent_process: "ParentBaseFileName"
+
+# OS value mappings
+os_mappings:
+  Win: Windows
+  Mac: macOS
+  Lin: Linux
+
+# Query template (Humio QL)
+query_template: |
+  {{#patterns}}
+  FilePath=/{{pattern}}/i OR ImageFileName=/{{pattern}}/i OR CommandLine=/{{pattern}}/i
+  {{/patterns}}
+  | select([@timestamp, UserName, ComputerName, event_platform, FilePath, ImageFileName, CommandLine, ParentBaseFileName])
+  | tail(10000)
+
+# API limits
+limits:
+  max_events_per_query: 10000
+  window_days: 3
+  request_delay_ms: 3000

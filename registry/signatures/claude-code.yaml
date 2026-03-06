@@ -1,0 +1,37 @@
+# Claude Code Detection Signatures
+id: claude-code
+name: Claude Code Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Claude Code CLI
+
+patterns:
+  process:
+    - pattern: "claude-code"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "npx.*claude"
+      type: regex
+      case_sensitive: false
+      fields: [command_line]
+
+  file_path:
+    - pattern: ".claude"
+      type: substring
+      description: Claude Code configuration directory
+
+    - pattern: "claude-code"
+      type: substring
+
+  network:
+    - pattern: "api.anthropic.com"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

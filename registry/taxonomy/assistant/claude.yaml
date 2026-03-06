@@ -1,0 +1,30 @@
+# Claude Agent Family
+
+family:
+  id: claude
+  name: Claude
+  description: Anthropic's Claude AI assistants
+  kingdom: assistant
+  website: https://claude.ai
+
+species:
+  - id: claude-desktop
+    name: Claude Desktop
+    description: Claude macOS and Windows desktop application
+    website: https://claude.ai/download
+    signatures:
+      - ref: claude
+
+  - id: claude-code
+    name: Claude Code
+    description: Claude CLI coding assistant
+    website: https://claude.ai/code
+    signatures:
+      - ref: claude-code
+
+  - id: cline
+    name: Cline
+    description: VS Code extension for Claude (formerly claude-dev)
+    website: https://github.com/cline/cline
+    signatures:
+      - ref: cline

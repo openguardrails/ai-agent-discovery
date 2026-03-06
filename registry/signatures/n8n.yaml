@@ -1,0 +1,40 @@
+# N8N Detection Signatures
+id: n8n
+name: N8N Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for N8N workflow automation
+
+patterns:
+  process:
+    - pattern: "n8n"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "n8n-node"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "n8n"
+      type: substring
+
+    - pattern: ".n8n"
+      type: substring
+      description: N8N configuration directory
+
+  network:
+    - pattern: "n8n.io"
+      type: domain
+
+    - pattern: "n8n.cloud"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

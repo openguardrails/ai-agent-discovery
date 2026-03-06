@@ -1,0 +1,50 @@
+# Claude Detection Signatures
+id: claude
+name: Claude Desktop Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Claude Desktop application
+
+patterns:
+  process:
+    - pattern: "Claude\\.app"
+      type: regex
+      case_sensitive: true
+      fields: [file_path]
+
+    - pattern: "Claude.exe"
+      type: substring
+      fields: [file_path, image_name]
+
+    - pattern: "claude-desktop"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "Claude.app"
+      type: substring
+
+    - pattern: "Anthropic/Claude"
+      type: substring
+
+    - pattern: ".claude"
+      type: substring
+      description: Claude configuration directory
+
+  network:
+    - pattern: "claude.ai"
+      type: domain
+
+    - pattern: "anthropic.com"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+    - msedge
+    - safari
+  paths:
+    - /tmp/
+    - /var/cache/

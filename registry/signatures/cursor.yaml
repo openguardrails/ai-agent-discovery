@@ -1,0 +1,47 @@
+# Cursor Detection Signatures
+id: cursor
+name: Cursor Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Cursor AI code editor
+
+patterns:
+  process:
+    - pattern: "Cursor\\.app"
+      type: regex
+      case_sensitive: true
+      fields: [file_path]
+
+    - pattern: "Cursor.exe"
+      type: substring
+      fields: [file_path, image_name]
+
+    - pattern: "cursor"
+      type: substring
+      case_sensitive: false
+      fields: [image_name]
+
+  file_path:
+    - pattern: "Cursor.app"
+      type: substring
+
+    - pattern: "Cursor/"
+      type: substring
+
+    - pattern: ".cursor"
+      type: substring
+      description: Cursor configuration directory
+
+  network:
+    - pattern: "cursor.com"
+      type: domain
+
+    - pattern: "cursor.sh"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

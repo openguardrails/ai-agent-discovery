@@ -1,0 +1,44 @@
+# Dify Detection Signatures
+id: dify
+name: Dify Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Dify LLM platform
+
+patterns:
+  process:
+    - pattern: "dify"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "dify-api"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+    - pattern: "dify-worker"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "dify"
+      type: substring
+
+    - pattern: ".dify"
+      type: substring
+
+  network:
+    - pattern: "dify.ai"
+      type: domain
+
+    - pattern: "api.dify.ai"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

@@ -1,0 +1,28 @@
+# ClawdBot Detection Signatures
+id: clawdbot
+name: ClawdBot Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for ClawdBot AI agent
+
+patterns:
+  process:
+    - pattern: "clawdbot"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "ClawdBot"
+      type: substring
+      fields: [file_path, image_name]
+
+  file_path:
+    - pattern: "\\.clawdbot"
+      type: substring
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

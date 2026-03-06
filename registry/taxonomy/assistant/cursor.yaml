@@ -1,0 +1,16 @@
+# Cursor Agent Family
+
+family:
+  id: cursor
+  name: Cursor
+  description: Cursor AI-powered code editor
+  kingdom: assistant
+  website: https://cursor.com
+
+species:
+  - id: cursor
+    name: Cursor
+    description: Cursor AI code editor
+    website: https://cursor.com
+    signatures:
+      - ref: cursor

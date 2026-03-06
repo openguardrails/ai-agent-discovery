@@ -1,0 +1,36 @@
+# Flowise Detection Signatures
+id: flowise
+name: Flowise Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Flowise LLM flow builder
+
+patterns:
+  process:
+    - pattern: "flowise"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "npx.*flowise"
+      type: regex
+      case_sensitive: false
+      fields: [command_line]
+
+  file_path:
+    - pattern: "flowise"
+      type: substring
+
+    - pattern: ".flowise"
+      type: substring
+
+  network:
+    - pattern: "flowiseai.com"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

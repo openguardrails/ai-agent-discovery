@@ -1,0 +1,44 @@
+# ChatGPT Detection Signatures
+id: chatgpt
+name: ChatGPT Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for ChatGPT desktop and mobile apps
+
+patterns:
+  process:
+    - pattern: "ChatGPT\\.app"
+      type: regex
+      case_sensitive: true
+      fields: [file_path]
+
+    - pattern: "ChatGPT.exe"
+      type: substring
+      fields: [file_path, image_name]
+
+    - pattern: "chatgpt"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name]
+
+  file_path:
+    - pattern: "ChatGPT.app"
+      type: substring
+
+    - pattern: "OpenAI/ChatGPT"
+      type: substring
+
+  network:
+    - pattern: "chat.openai.com"
+      type: domain
+
+    - pattern: "api.openai.com"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+    - msedge
+  paths:
+    - /tmp/

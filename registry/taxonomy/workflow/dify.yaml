@@ -1,0 +1,22 @@
+# Dify Workflow Family
+
+family:
+  id: dify
+  name: Dify
+  description: Dify LLM application development platform
+  kingdom: workflow
+  website: https://dify.ai
+
+species:
+  - id: dify
+    name: Dify
+    description: Main Dify platform
+    website: https://dify.ai
+    signatures:
+      - ref: dify
+
+  - id: dify-sandbox
+    name: Dify Sandbox
+    description: Dify code execution sandbox
+    signatures:
+      - ref: dify-sandbox

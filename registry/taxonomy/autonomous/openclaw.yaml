@@ -1,0 +1,35 @@
+# OpenClaw Agent Family
+
+family:
+  id: openclaw
+  name: OpenClaw
+  description: OpenClaw and related autonomous AI coding agents
+  kingdom: autonomous
+  website: https://openclaw.ai
+
+species:
+  - id: openclaw
+    name: OpenClaw
+    description: Primary OpenClaw autonomous coding agent
+    website: https://openclaw.ai
+    signatures:
+      - ref: openclaw
+
+  - id: nanoclaw
+    name: NanoClaw
+    description: Lightweight variant of OpenClaw
+    signatures:
+      - ref: nanoclaw
+
+  - id: moltbot
+    name: MoltBot
+    description: MoltBot AI agent framework
+    website: https://moltbot.ai
+    signatures:
+      - ref: moltbot
+
+  - id: clawdbot
+    name: ClawdBot
+    description: ClawdBot alternative agent branding
+    signatures:
+      - ref: clawdbot

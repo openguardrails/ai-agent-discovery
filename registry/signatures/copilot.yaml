@@ -1,0 +1,42 @@
+# GitHub Copilot Detection Signatures
+id: copilot
+name: GitHub Copilot Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for GitHub Copilot
+
+patterns:
+  process:
+    - pattern: "copilot"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "github-copilot"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "copilot"
+      type: substring
+
+    - pattern: ".vscode/extensions/.*copilot"
+      type: regex
+
+    - pattern: "GitHub.copilot"
+      type: substring
+
+  network:
+    - pattern: "copilot.github.com"
+      type: domain
+
+    - pattern: "githubcopilot.com"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

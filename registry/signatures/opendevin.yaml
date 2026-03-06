@@ -1,0 +1,32 @@
+# OpenDevin Detection Signatures
+id: opendevin
+name: OpenDevin Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for OpenDevin open-source agent
+
+patterns:
+  process:
+    - pattern: "opendevin"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "open-devin"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "opendevin"
+      type: substring
+
+    - pattern: "OpenDevin"
+      type: substring
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

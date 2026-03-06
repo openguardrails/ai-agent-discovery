@@ -1,0 +1,22 @@
+# ChatGPT Agent Family
+
+family:
+  id: chatgpt
+  name: ChatGPT
+  description: OpenAI's ChatGPT assistants
+  kingdom: assistant
+  website: https://chat.openai.com
+
+species:
+  - id: chatgpt-desktop
+    name: ChatGPT Desktop
+    description: ChatGPT macOS and Windows desktop application
+    website: https://openai.com/chatgpt/desktop
+    signatures:
+      - ref: chatgpt
+
+  - id: chatgpt-app
+    name: ChatGPT App
+    description: ChatGPT mobile application
+    signatures:
+      - ref: chatgpt

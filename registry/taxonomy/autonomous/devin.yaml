@@ -1,0 +1,30 @@
+# Devin Agent Family
+
+family:
+  id: devin
+  name: Devin
+  description: Devin and related AI software engineering agents
+  kingdom: autonomous
+  website: https://devin.ai
+
+species:
+  - id: devin
+    name: Devin
+    description: Cognition AI's autonomous software engineer
+    website: https://devin.ai
+    signatures:
+      - ref: devin
+
+  - id: opendevin
+    name: OpenDevin
+    description: Open-source Devin alternative
+    website: https://github.com/OpenDevin/OpenDevin
+    signatures:
+      - ref: opendevin
+
+  - id: swe-agent
+    name: SWE-agent
+    description: Princeton SWE-agent for autonomous coding
+    website: https://swe-agent.com
+    signatures:
+      - ref: swe-agent

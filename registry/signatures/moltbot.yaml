@@ -1,0 +1,32 @@
+# MoltBot Detection Signatures
+id: moltbot
+name: MoltBot Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for MoltBot AI agent
+
+patterns:
+  process:
+    - pattern: "moltbot"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "MoltBot"
+      type: substring
+      fields: [file_path, image_name]
+
+  file_path:
+    - pattern: "\\.moltbot"
+      type: substring
+
+  network:
+    - pattern: "moltbot.ai"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

@@ -1,0 +1,33 @@
+# AgentGPT Detection Signatures
+id: agentgpt
+name: AgentGPT Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for AgentGPT web-based agent
+
+patterns:
+  process:
+    - pattern: "agentgpt"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "agent-gpt"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "agentgpt"
+      type: substring
+
+  network:
+    - pattern: "agentgpt.reworkd.ai"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

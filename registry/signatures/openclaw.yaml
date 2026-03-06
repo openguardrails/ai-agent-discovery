@@ -1,0 +1,48 @@
+# OpenClaw Detection Signatures
+id: openclaw
+name: OpenClaw Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for OpenClaw AI agent
+
+patterns:
+  process:
+    - pattern: "openclaw"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "OpenClaw\\.app"
+      type: regex
+      case_sensitive: true
+      fields: [file_path]
+
+    - pattern: "openclaw-agent"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name]
+
+  file_path:
+    - pattern: "\\.openclaw"
+      type: substring
+      description: Hidden .openclaw directory
+
+    - pattern: "openclaw/config"
+      type: substring
+
+  network:
+    - pattern: "openclaw.ai"
+      type: domain
+
+    - pattern: "api.openclaw"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+    - msedge
+    - safari
+  paths:
+    - /tmp/
+    - /var/cache/

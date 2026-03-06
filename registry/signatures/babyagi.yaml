@@ -1,0 +1,32 @@
+# BabyAGI Detection Signatures
+id: babyagi
+name: BabyAGI Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for BabyAGI task-driven agent
+
+patterns:
+  process:
+    - pattern: "babyagi"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "baby-agi"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "babyagi"
+      type: substring
+
+    - pattern: "baby_agi"
+      type: substring
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

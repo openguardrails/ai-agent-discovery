@@ -1,0 +1,29 @@
+# AutoGPT Agent Family
+
+family:
+  id: autogpt
+  name: AutoGPT
+  description: AutoGPT and related autonomous GPT-based agents
+  kingdom: autonomous
+  website: https://autogpt.net
+
+species:
+  - id: autogpt
+    name: AutoGPT
+    description: Original AutoGPT autonomous agent
+    website: https://autogpt.net
+    signatures:
+      - ref: autogpt
+
+  - id: agentgpt
+    name: AgentGPT
+    description: Web-based AutoGPT interface
+    website: https://agentgpt.reworkd.ai
+    signatures:
+      - ref: agentgpt
+
+  - id: babyagi
+    name: BabyAGI
+    description: Simplified task-driven autonomous agent
+    signatures:
+      - ref: babyagi

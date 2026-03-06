@@ -1,0 +1,45 @@
+# AutoGPT Detection Signatures
+id: autogpt
+name: AutoGPT Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for AutoGPT autonomous agent
+
+patterns:
+  process:
+    - pattern: "autogpt"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "auto-gpt"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+    - pattern: "Auto-GPT"
+      type: substring
+      fields: [file_path]
+
+  file_path:
+    - pattern: "autogpt"
+      type: substring
+
+    - pattern: "auto_gpt"
+      type: substring
+
+    - pattern: ".autogpt"
+      type: substring
+
+  network:
+    - pattern: "autogpt.net"
+      type: domain
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+    - msedge
+  paths:
+    - /tmp/
+    - node_modules

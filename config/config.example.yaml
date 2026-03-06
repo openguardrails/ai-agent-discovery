@@ -1,0 +1,40 @@
+# AI Agent Discovery Configuration
+# Copy this file to config.yaml and customize
+
+# EDR connector settings
+connector:
+  type: file  # Options: crowdstrike, defender, file
+
+  # CrowdStrike configuration
+  # Uncomment and set environment variables or direct values
+  # crowdstrike:
+  #   client_id: ${CROWDSTRIKE_CLIENT_ID}
+  #   client_secret: ${CROWDSTRIKE_CLIENT_SECRET}
+  #   base_url: https://api.crowdstrike.com  # Optional, defaults to US-1
+
+  # Microsoft Defender configuration
+  # Uncomment and set environment variables or direct values
+  # defender:
+  #   tenant_id: ${AZURE_TENANT_ID}
+  #   client_id: ${AZURE_CLIENT_ID}
+  #   client_secret: ${AZURE_CLIENT_SECRET}
+
+  # File connector (for testing/importing EDR exports)
+  file:
+    path: ./tests/fixtures/sample-events.json
+    format: json  # Options: csv, json, ndjson
+
+# Scan settings
+scan:
+  lookback_days: 14      # How many days back to search
+  max_events: 10000      # Maximum events to process
+
+# Dashboard settings
+dashboard:
+  port: 3000             # Web dashboard port
+  host: 0.0.0.0          # Listen address (0.0.0.0 for all interfaces)
+
+# Output settings
+output:
+  format: html           # Options: html, json, csv
+  path: ./results        # Output directory

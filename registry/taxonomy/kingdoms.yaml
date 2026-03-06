@@ -1,0 +1,15 @@
+# AI Agent Kingdoms
+# Top-level classification (very stable, rarely changes)
+
+kingdoms:
+  - id: autonomous
+    name: Autonomous
+    description: AI agents that can act independently with tools, making decisions and executing tasks without human intervention
+
+  - id: assistant
+    name: Assistant
+    description: Chat-based AI agents designed for interactive conversation with humans, providing assistance on demand
+
+  - id: workflow
+    name: Workflow
+    description: AI-powered workflow orchestrators that automate multi-step processes and integrate various tools and services

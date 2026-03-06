@@ -1,0 +1,23 @@
+# Flowise Workflow Family
+
+family:
+  id: flowise
+  name: Flowise
+  description: Flowise LLM flow builder
+  kingdom: workflow
+  website: https://flowiseai.com
+
+species:
+  - id: flowise
+    name: Flowise
+    description: Flowise drag-and-drop LLM flow builder
+    website: https://flowiseai.com
+    signatures:
+      - ref: flowise
+
+  - id: langflow
+    name: Langflow
+    description: DataStax Langflow visual LLM builder
+    website: https://langflow.org
+    signatures:
+      - ref: langflow

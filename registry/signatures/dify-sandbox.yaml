@@ -1,0 +1,32 @@
+# Dify Sandbox Detection Signatures
+id: dify-sandbox
+name: Dify Sandbox Signatures
+version: "1.0.0"
+author: community
+description: Detection patterns for Dify code execution sandbox
+
+patterns:
+  process:
+    - pattern: "dify-sandbox"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, image_name, command_line]
+
+    - pattern: "dify_sandbox"
+      type: substring
+      case_sensitive: false
+      fields: [file_path, command_line]
+
+  file_path:
+    - pattern: "dify-sandbox"
+      type: substring
+
+    - pattern: "dify_sandbox"
+      type: substring
+
+exclusions:
+  processes:
+    - chrome
+    - firefox
+  paths:
+    - /tmp/

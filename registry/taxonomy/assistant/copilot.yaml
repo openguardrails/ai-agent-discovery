@@ -1,0 +1,22 @@
+# GitHub Copilot Agent Family
+
+family:
+  id: copilot
+  name: GitHub Copilot
+  description: GitHub Copilot AI coding assistants
+  kingdom: assistant
+  website: https://github.com/features/copilot
+
+species:
+  - id: copilot
+    name: GitHub Copilot
+    description: GitHub Copilot code completion
+    website: https://github.com/features/copilot
+    signatures:
+      - ref: copilot
+
+  - id: copilot-chat
+    name: Copilot Chat
+    description: GitHub Copilot Chat in VS Code
+    signatures:
+      - ref: copilot-chat
