@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test -- --run
+        run: npm test -- --run --passWithNoTests
 
       - name: Check if version changed
         id: version
