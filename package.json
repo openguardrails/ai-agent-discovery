@@ -1,12 +1,12 @@
 {
   "name": "ai-agent-discovery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enterprise tool for discovering AI Agents running within an organization",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "aad": "./bin/aad.js",
-    "ai-agent-discovery": "./bin/aad.js"
+    "aad": "bin/aad.js",
+    "ai-agent-discovery": "bin/aad.js"
   },
   "scripts": {
     "build": "tsc",
@@ -32,7 +32,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OpenGuardrails/ai-agent-discovery.git"
+    "url": "git+https://github.com/OpenGuardrails/ai-agent-discovery.git"
   },
   "homepage": "https://openguardrails.io/ai-agent-discovery",
   "bugs": {
@@ -57,5 +57,9 @@
     "@types/node": "^20.10.0",
     "typescript": "^5.3.0",
     "vitest": "^1.1.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
   }
 }
