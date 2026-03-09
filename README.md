@@ -8,9 +8,6 @@
 
 As AI agent adoption explodes across enterprises, security teams face a critical visibility gap. AI Agent Discovery integrates with your existing EDR infrastructure to identify and inventory all AI agents—from autonomous coding assistants to workflow automation platforms.
 
-<p align="center">
-  <img src="docs/assets/dashboard-preview.png" alt="AI Agent Discovery Dashboard" width="800">
-</p>
 
 ## Why AI Agent Discovery?
 
